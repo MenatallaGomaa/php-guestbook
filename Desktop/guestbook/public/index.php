@@ -94,12 +94,13 @@ $result = $conn->query("SELECT * FROM messages ORDER BY created_at DESC");
 
     <h4>Messages</h4>
     <?php while ($row = $result->fetch_assoc()): ?>
-        <div class="message-box">
-            <a href="?delete=<?php echo $row['id']; ?>" class="delete-btn">&times;</a>
-            <strong><?php echo htmlspecialchars($row['name']); ?>:</strong>
-            <p><?php echo nl2br(htmlspecialchars($row['message'])); ?></p>
-            <small class="text-muted"><?php echo $row['created_at']; ?></small>
-        </div>
+<div class="message-box">
+    <a href="?delete=<?php echo $row['id']; ?>" class="delete-btn">
+    <img src="/delete.png" alt="Delete" width="18" height="18"></a>
+    <strong><?php echo htmlspecialchars($row['name']); ?>:</strong>
+    <p><?php echo nl2br(htmlspecialchars($row['message'])); ?></p>
+    <small class="text-muted"><?php echo $row['created_at']; ?></small>
+</div>
     <?php endwhile; ?>
 </div>
 
