@@ -1,0 +1,76 @@
+{
+  "label": "HB Feature Card",
+  "help_text": "Kleine Karte mit Titel, Text, optionalem Link und Icon.",
+  "css_assets": [],
+  "js_assets": [],
+  "host_template_types": [
+    "PAGE",
+    "BLOG_POST",
+    "BLOG_LISTING",
+    "EMAIL"
+  ],
+  "is_available_for_new_content": true,
+  "fields": [
+    {
+      "name": "title",
+      "label": "Titel",
+      "type": "text",
+      "required": true,
+      "default": "Feature"
+    },
+    {
+      "name": "description",
+      "label": "Beschreibung",
+      "type": "richtext",
+      "required": false,
+      "default": "Kurzer Beschreibungstext."
+    },
+    {
+      "name": "link",
+      "label": "Link",
+      "type": "link",
+      "required": false
+    },
+    {
+      "name": "icon",
+      "label": "Icon (optional)",
+      "type": "choice",
+      "choices": [
+        {
+          "label": "Keins",
+          "value": ""
+        },
+        {
+          "label": "⭐ Stern",
+          "value": "⭐"
+        },
+        {
+          "label": "⚡ Blitz",
+          "value": "⚡"
+        },
+        {
+          "label": "✅ Haken",
+          "value": "✅"
+        }
+      ],
+      "default": ""
+    },
+    {
+      "name": "emphasis",
+      "label": "Betonung",
+      "type": "choice",
+      "choices": [
+        {
+          "label": "Standard",
+          "value": "standard"
+        },
+        {
+          "label": "Hervorgehoben",
+          "value": "emphasis"
+        }
+      ],
+      "display": "radio",
+      "default": "standard"
+    }
+  ]
+}

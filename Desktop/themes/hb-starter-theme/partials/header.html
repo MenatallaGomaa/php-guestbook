@@ -1,0 +1,21 @@
+
+{% set brand_color = theme.brand_color.color or "#2563eb" %}
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page_meta.html_title }}</title>
+    {{ standard_header_includes }}
+    <link rel="stylesheet" href="{{ get_asset_url('../assets/css/main.css') }}">
+  </head>
+  <body class="hb-theme">
+    <header class="hb-header" style="border-top: 4px solid {{ brand_color }};">
+      <div class="hb-container">
+        <a class="hb-logo" href="/">{{ site_settings.company_name|default('Company') }}</a>
+        <nav class="hb-nav">
+          {% menu id=site_settings.primary_menu, label='Hauptmenü' %}
+        </nav>
+      </div>
+    </header>
+    <main>

@@ -1,0 +1,10 @@
+
+<section class="hb-hero" style="{% if module.background_image.src %}background-image:url('{{ module.background_image.src }}');{% endif %}">
+  <div class="hb-container hb-hero__inner">
+    <h1>{{ module.headline }}</h1>
+    {% if module.subheadline %}<p class="hb-hero__sub">{{ module.subheadline }}</p>{% endif %}
+    {% if module.cta_text %}
+      <a class="hb-btn" href="{{ module.cta_href|default('#') }}">{{ module.cta_text }}</a>
+    {% endif %}
+  </div>
+</section>

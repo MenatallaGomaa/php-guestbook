@@ -1,0 +1,13 @@
+
+{% set classes = ['hb-card'] %}
+{% if module.emphasis == 'emphasis' %}{% do classes.append('hb-card--emphasis') %}{% endif %}
+<article class="{{ classes|join(' ') }}">
+  {% if module.icon %}<div class="hb-card__icon">{{ module.icon }}</div>{% endif %}
+  <h3 class="hb-card__title">{{ module.title }}</h3>
+  <div class="hb-card__desc">{{ module.description }}</div>
+  {% if module.link.url.href %}
+    <a class="hb-card__link" href="{{ module.link.url.href }}" {% if module.link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>
+      Mehr erfahren
+    </a>
+  {% endif %}
+</article>

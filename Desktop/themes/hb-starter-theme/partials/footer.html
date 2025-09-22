@@ -1,0 +1,11 @@
+
+    </main>
+    <footer class="hb-footer">
+      <div class="hb-container">
+        <p>&copy; {{ local_dt|datetimeformat('%Y') }} {{ site_settings.company_name|default('Company') }} — Alle Rechte vorbehalten.</p>
+      </div>
+    </footer>
+    <script src="{{ get_asset_url('../assets/js/main.js') }}"></script>
+    {{ standard_footer_includes }}
+  </body>
+</html>

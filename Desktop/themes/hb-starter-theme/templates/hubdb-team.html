@@ -1,0 +1,30 @@
+
+{% include '../partials/header.html' %}
+{% dnd_area 'main_area' label='Main Content' %}
+  {% dnd_section %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        <div class="hb-container">
+          <h1>Unser Team</h1>
+          <p class="mt-24">Dieses Listing liest Inhalte aus einer HubDB-Tabelle (z. B. <strong>team</strong>).</p>
+          {% set table = hubdb_table_rows('team', queryparam_map={'orderBy': 'name'}) %}
+          {% if table|length == 0 %}
+            <p><em>Hinweis: Erstelle in HubDB eine Tabelle <code>team</code> mit Spalten: name (Text), role (Text), photo (Bild), email (Text). Füge ein paar Zeilen hinzu.</em></p>
+          {% else %}
+          <div class="hb-team-grid">
+            {% for row in table %}
+              <article class="hb-team-card">
+                {% if row.photo %}<img class="hb-team-photo" src="{{ row.photo.url }}" alt="{{ row.name }}">{% endif %}
+                <h3>{{ row.name }}</h3>
+                <p class="hb-team-role">{{ row.role }}</p>
+                {% if row.email %}<a href="mailto:{{ row.email }}">Kontakt</a>{% endif %}
+              </article>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+{% end_dnd_area %}
+{% include '../partials/footer.html' %}

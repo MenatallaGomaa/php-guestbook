@@ -1,0 +1,196 @@
+/* =========================
+   Root + Reset
+========================= */
+:root {
+  --brand: {{ theme.brand_color.color|default('#2563eb') }};
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  background: #fff;
+  color: #111827;
+}
+
+/* =========================
+   Container
+========================= */
+.hb-container {
+  max-width: {{ theme.container_width|default(1140) }}px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+main {
+  max-width: {{ theme.container_width|default(1140) }}px;
+  margin: 0 auto;
+  padding: 0 10px;   
+}
+
+/* =========================
+   Header + Navigation
+========================= */
+.hb-header {
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.hb-header .hb-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+}
+
+.hb-logo {
+  font-weight: 700;
+  text-decoration: none;
+  color: #0f172a;
+  font-size: 18px;
+}
+
+/* --- Main Navigation --- */
+.hb-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.hb-nav ul li {
+  position: relative;
+}
+
+.hb-nav ul li a {
+  text-decoration: none;
+  color: #111827;
+  font-weight: 500;
+  padding: 8px 12px;
+  display: block;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.hb-nav ul li a:hover {
+  color: var(--brand);
+}
+
+/* --- Dropdowns --- */
+.hb-nav ul li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 8px 0;
+  min-width: 200px;
+  z-index: 200;
+}
+
+.hb-nav ul li:hover > ul {
+  display: flex;
+}
+
+.hb-nav ul li ul li a {
+  padding: 10px 16px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.hb-nav ul li ul li a:hover {
+  background: #f3f4f6;
+  color: var(--brand);
+}
+
+/* =========================
+   Footer
+========================= */
+.hb-footer {
+  padding: 24px 0;
+  border-top: 1px solid #e5e7eb;
+  background: #fafafa;
+  color: #334155;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* =========================
+   Utilities
+========================= */
+.mt-24 { margin-top: 24px; }
+.text-center { text-align: center; }
+
+/* =========================
+   Team Grid (HubDB Example)
+========================= */
+.hb-team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.hb-team-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  background: #fff;
+  text-align: center;
+}
+
+.hb-team-photo {
+  width: 96px;
+  height: 96px;
+  border-radius: 9999px;
+  object-fit: cover;
+  margin: 0 auto 8px;
+}
+
+.hb-team-role {
+  color: #475569;
+  margin: 4px 0 8px;
+}
+
+/* =========================
+   Responsive Styles
+========================= */
+@media (max-width: 768px) {
+  .hb-header .hb-container {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .hb-nav ul {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .hb-nav ul li a {
+    padding: 10px 16px;
+    width: 100%;
+  }
+
+  .hb-nav ul li ul {
+    position: static;
+    display: none;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    margin-left: 16px;
+  }
+
+  .hb-nav ul li:hover > ul {
+    display: block;
+  }
+}

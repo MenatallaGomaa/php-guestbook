@@ -1,0 +1,21 @@
+{
+  "label": "HB Starter Theme Settings",
+  "global": true,
+  "fields": [
+    {
+      "name": "brand_color",
+      "label": "Brand Color",
+      "type": "color",
+      "default": {
+        "color": "#2563eb",
+        "opacity": 100
+      }
+    },
+    {
+      "name": "container_width",
+      "label": "Max Container Width (px)",
+      "type": "number",
+      "default": 1140
+    }
+  ]
+}

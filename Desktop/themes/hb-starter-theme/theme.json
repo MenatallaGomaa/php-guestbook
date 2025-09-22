@@ -1,0 +1,13 @@
+{
+  "label": "HB Starter Theme",
+  "screenshot": "",
+  "enable_domain_stylesheets": false,
+  "enable_domain_javascript": false,
+  "is_available_for_new_content": true,
+  "responsive_breakpoints": {
+    "xs": 480,
+    "sm": 768,
+    "md": 992,
+    "lg": 1200
+  }
+}
